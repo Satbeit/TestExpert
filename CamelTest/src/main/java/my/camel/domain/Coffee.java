@@ -6,39 +6,51 @@ import java.io.Serializable;
  * Created by sanket on 10/28/2014.
  */
 public class Coffee implements Entity{
-    String name ;
 
-    double price ;
+    Type type;
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
 
     public Coffee() {
+
     }
 
-    public Coffee(String name, double price) {
-        this.name = name;
-        this.price = price;
+    public Coffee(Type type) {
+
+        this.type = type;
     }
 
-    public String getName() {
-        return name;
-    }
+    public enum Type {
+        BLACK_COFFE("black coffe", 5),
+        BLACK_COFFE_W_SUGAR("black coffe with sugar", 10);
 
-    public void setName(String name) {
-        this.name = name;
-    }
+        String name ;
+        long price ;
 
-    public double getPrice() {
-        return price;
-    }
+        Type(String name, long price) {
+            this.name = name;
+            this.price = price;
+        }
 
-    public void setPrice(double price) {
-        this.price = price;
+        public String getName() {
+            return name;
+        }
+
+        public long getPrice() {
+            return price;
+        }
     }
 
     @Override
     public String toString() {
         return "Coffee{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
+                "type=" + type +
                 '}';
     }
 }

@@ -12,6 +12,6 @@ public class Test {
         ApplicationContext app = new ClassPathXmlApplicationContext("META-INF\\spring\\invoices-context.xml");
         System.out.println(app);
         TestAction testAction = (TestAction) app.getBean("testAction");
-        testAction.generateInvoices();
+        testAction.startCamelRouting();
     }
 }
