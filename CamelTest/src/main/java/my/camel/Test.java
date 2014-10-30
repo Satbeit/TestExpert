@@ -8,8 +8,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Test {
 
-    public static void main(String[] args) {
-        ApplicationContext app = new ClassPathXmlApplicationContext("META-INF\\spring\\camel-context.xml");
+    public static void main(String[] args) throws InterruptedException {
+        ApplicationContext app = new ClassPathXmlApplicationContext("META-INF\\spring\\invoices-context.xml");
         System.out.println(app);
         TestAction testAction = (TestAction) app.getBean("testAction");
         testAction.generateInvoices();

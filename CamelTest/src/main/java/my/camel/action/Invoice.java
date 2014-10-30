@@ -1,13 +1,12 @@
 package my.camel.action;
 
 
-import my.camel.AbstractExchange;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
-public class Invoice<T> extends AbstractExchange {
+public class Invoice<T> {
 
     List<T> list;
 
